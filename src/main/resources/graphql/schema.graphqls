@@ -1,0 +1,34 @@
+type Query {
+    allRooms: [Room]
+    roomById(id: ID): Room
+    allHotels: [Hotel]
+}
+
+type Mutation {
+    saveHotel(input: HotelInput!): Hotel!
+}
+
+input HotelInput {
+    "Hotel Id"
+    id: ID!
+    "Hotel name"
+    name: String
+    "Hotel description"
+    description: String
+}
+
+type Hotel {
+    "Hotel Id"
+    id: ID!
+    "Hotel name"
+    name: String
+    "Hotel Description"
+    description: String
+}
+
+type Room {
+    id: ID!
+    name: String
+    description: String
+    hotel: Hotel
+}
